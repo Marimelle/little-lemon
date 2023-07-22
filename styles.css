@@ -73,3 +73,32 @@ nav>ul {
 main {
   margin-top: 110px;
 }
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+#hero-img {
+  width: 100%;
+  margin: -25px auto;
+  filter:brightness(70%);
+}
+span#hero-span {
+  color: rgb(244, 244, 95);
+  position: relative;
+}
+#hero>h1 {
+  position: absolute;
+  margin: auto 0 auto 4.5vw;
+  z-index: 2;
+  font-family: var(--font-frankruhl);
+  font-size: clamp(16px, 3.5vw, 56px);
+  font-weight: 500;
+  line-height: 1.2;
+  width: calc(60% - 2vw);
+  color: var(--background-color);
+  text-shadow: 1px 1px 3px  black;
+}
