@@ -1,6 +1,6 @@
 :root {
   --primary-color: rgb(73, 94, 87);
-  --background-color: rgb(255, 249, 224);
+  --background-color: #fff5cd;
   --accent-color: rgb(244, 206, 20);
   --font-body: 16px;
   --font-frankruhl: 'Frank Ruhl Libre', serif;
@@ -17,7 +17,6 @@
   box-sizing: border-box;
 }
 body {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -49,7 +48,6 @@ nav {
 header>img {
   max-height: 60px;
   width: 220px;
-  text-align: center;
   margin: 0.4rem auto;
 }
 nav {
@@ -85,19 +83,19 @@ main {
 }
 #hero-img {
   max-height: 80vh;
+  min-height: 200px;
   width: 100%;
-  /* filter:brightness(70%); */
+  overflow: hidden;
 }
 span#hero-span {
   color: rgb(244, 244, 95);
-  position: relative;
 }
 #hero>h1 {
   position: absolute;
   margin: auto 0 auto 4.5vw;
   z-index: 2;
   font-family: var(--font-frankruhl);
-  font-size: clamp(16px, 3.5vw, 56px);
+  font-size: clamp(1.2rem, 3.5vw, 56px);
   font-weight: 500;
   line-height: 1.2;
   width: calc(60% - 2vw);
@@ -136,4 +134,18 @@ footer>div:last-child {
   flex-direction: column;
   text-align: right;
   align-self: center;
+}
+@media (max-width: 600px) {
+  :root {
+    --font-body: 14px;
+    min-width: 330px;
+    overflow: scroll;
+  }
+  body {
+    width: 90%;
+  }
+  nav {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
 }
