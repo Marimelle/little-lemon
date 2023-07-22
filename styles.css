@@ -1,7 +1,7 @@
 :root {
-  --primary-color: rgb(26, 26, 26);
+  --primary-color: rgb(73, 94, 87);
   --background-color: rgb(255, 249, 224);
-  --hero-background: rgba(26, 26, 26, 0.5);
+  --accent-color: rgb(244, 206, 20);
   --font-body: 16px;
   --font-frankruhl: 'Frank Ruhl Libre', serif;
   --font-cabin: Cabin, sans-serif;
@@ -9,9 +9,6 @@
   font-size: var(--font-body);
   font-family: var(--font-cabin);
   font-weight: 600;
-  color: var(--primary-color);
-  background-color: var(--background-color);
-
 }
 
 * {
@@ -20,6 +17,7 @@
   box-sizing: border-box;
 }
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -28,6 +26,8 @@ body {
   max-width: 1280px;
   width: 80%;
   margin: 0 auto;
+  color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 a,
@@ -36,42 +36,43 @@ a:focus {
   color: inherit;
 }
 a:active {
-  color: #F4CE14;
+  color: var(--accent-color);
 }
-ul {
-}
-img[src^="logos"] {
-  max-height: 72px;
-}
-
-header {
+header,
+nav {
   position: fixed;
   display: flex;
-  flex-direction: column;
   width: 100%;
-  align-items: stretch;
-  background-color: var(--background-color);
   z-index: 10;
+  background-color: var(--background-color);
 }
 header>img {
-  width: 263.7px;
+  max-height: 60px;
+  width: 220px;
   text-align: center;
   margin: 0.4rem auto;
+}
+nav {
+  top: 72px;
+  background-color: var(--primary-color);
 }
 nav>ul {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5vw;
-  color: #495E57;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
   width: 100%;
-  border-top: 1px solid #495E57;
-  border-bottom: 1px solid #495E57;
-  padding: 2px 0;
+  padding: 5px 0;
   list-style: none;
 }
 main {
-  margin-top: 110px;
+  margin: 115px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: hidden;
 }
 
 #hero {
@@ -80,11 +81,13 @@ main {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  border-radius: 10px;
 }
 #hero-img {
   width: 100%;
-  margin: -25px auto;
-  filter:brightness(70%);
+  margin: 0px auto;
+  max-height: 80vh;
+  /* filter:brightness(70%); */
 }
 span#hero-span {
   color: rgb(244, 244, 95);
@@ -101,4 +104,25 @@ span#hero-span {
   width: calc(60% - 2vw);
   color: var(--background-color);
   text-shadow: 1px 1px 3px  black;
+}
+.cards{
+  display: flex;
+  justify-content: space-between;
+  gap: 2vw;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.cards>article {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--accent-color);
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  text-align: center;
+}
+
+footer img {
+  height: 30px;
 }
