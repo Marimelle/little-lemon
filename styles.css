@@ -84,9 +84,8 @@ main {
   border-radius: 10px;
 }
 #hero-img {
-  width: 100%;
-  margin: 0px auto;
   max-height: 80vh;
+  width: 100%;
   /* filter:brightness(70%); */
 }
 span#hero-span {
@@ -105,7 +104,8 @@ span#hero-span {
   color: var(--background-color);
   text-shadow: 1px 1px 3px  black;
 }
-.cards{
+.cards,
+footer{
   display: flex;
   justify-content: space-between;
   gap: 2vw;
@@ -125,4 +125,15 @@ span#hero-span {
 
 footer img {
   height: 30px;
+}
+footer>div {
+  display: flex;
+  flex: 1;
+  justify-content: start;
+}
+footer>div:last-child {
+  font-size: 0.9rem;
+  flex-direction: column;
+  text-align: right;
+  align-self: center;
 }
